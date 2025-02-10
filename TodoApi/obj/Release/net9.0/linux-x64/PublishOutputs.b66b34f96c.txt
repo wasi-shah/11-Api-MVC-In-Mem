@@ -1,0 +1,15 @@
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\bin\Release\net9.0\linux-x64\publish\TodoApi
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\bin\Release\net9.0\linux-x64\publish\appsettings.Development.json
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\bin\Release\net9.0\linux-x64\publish\appsettings.json
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\bin\Release\net9.0\linux-x64\publish\TodoApi.dll
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\bin\Release\net9.0\linux-x64\publish\TodoApi.deps.json
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\bin\Release\net9.0\linux-x64\publish\TodoApi.runtimeconfig.json
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\bin\Release\net9.0\linux-x64\publish\TodoApi.pdb
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\bin\Release\net9.0\linux-x64\publish\Microsoft.AspNetCore.OpenApi.dll
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\bin\Release\net9.0\linux-x64\publish\Microsoft.EntityFrameworkCore.dll
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\bin\Release\net9.0\linux-x64\publish\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\bin\Release\net9.0\linux-x64\publish\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\bin\Release\net9.0\linux-x64\publish\Microsoft.OpenApi.dll
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\bin\Release\net9.0\linux-x64\publish\Swashbuckle.AspNetCore.Swagger.dll
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\bin\Release\net9.0\linux-x64\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\bin\Release\net9.0\linux-x64\publish\Swashbuckle.AspNetCore.SwaggerUI.dll

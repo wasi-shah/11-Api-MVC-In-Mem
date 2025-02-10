@@ -1,0 +1,26 @@
+//@TodoApi_HostAddress = http://localhost:5115
+@TodoApi_HostAddress = http://localhost:55998
+
+###
+Post {{TodoApi_HostAddress}}/api/Todo
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "My new item 1",
+  "isComplete": true
+}
+
+###
+Post {{TodoApi_HostAddress}}/api/Todo
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "My new item 2",
+  "isComplete": true
+}
+
+
+###
+GET {{TodoApi_HostAddress}}/api/Todo
