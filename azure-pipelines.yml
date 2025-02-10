@@ -23,7 +23,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'azure-docker-connection'
-        repository: 'wasi-shah.11-Api-MVC-In-Mem'
+        repository: 'wasishah102/api-mvc-in-mem'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
