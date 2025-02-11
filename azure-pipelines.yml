@@ -12,7 +12,7 @@ stages:
   displayName: Build image
   jobs:
   - job: Build
-    displayName: Build
+    displayName: Build & Test
     pool:
       vmImage: ubuntu-latest
     steps:
@@ -21,7 +21,7 @@ stages:
         command: test
         projects: '**/*[Tt]est*/*.csproj'
          
-    - task: Docker@2
+    - task: Build & Push
       inputs:
         containerRegistry: 'azure-docker-connection'
         repository: 'wasishah102/api-mvc-in-mem'
