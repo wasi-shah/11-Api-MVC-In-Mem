@@ -16,12 +16,7 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: PublishTestResults@2
-      inputs:
-        testResultsFormat: 'XUnit'
-        testResultsFiles: '**/TEST-*.xml'
-        failTaskOnFailureToPublishResults: true
-        testRunTitle: 'My Test Plan'
+
     - task: Docker@2
       inputs:
         containerRegistry: 'azure-docker-connection'
