@@ -21,7 +21,15 @@ stages:
       inputs:
         command: test
         projects: '**/*[Tt]est*/*.csproj'
-         
+        arguments: '--configuration $(BuildConfiguration)--collect:"XPlat Code Coverage"'
+
+    - task: PublishCodeCoverageResults@2
+      displayName: 'Publish Code Coverage'
+      inputs:
+        codeCoverageTool: Cobertura
+        summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.cobertura.xml'
+        failIfCoverageEmpty: true
+
     - task: Docker@2
       displayName: Docker Build and Push 
       inputs:
