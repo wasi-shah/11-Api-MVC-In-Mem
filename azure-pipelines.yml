@@ -17,14 +17,17 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - task: DotNetCoreCLI@2
+      displayName: Test
       inputs:
         command: test
         projects: '**/*[Tt]est*/*.csproj'
          
-    - task: Build & Push
+    - task: Docker@2
+      displayName: Docker Build and Push 
       inputs:
         containerRegistry: 'azure-docker-connection'
         repository: 'wasishah102/api-mvc-in-mem'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
+  
