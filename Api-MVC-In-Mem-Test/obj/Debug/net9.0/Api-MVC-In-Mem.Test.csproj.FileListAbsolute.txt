@@ -116,3 +116,4 @@ c:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\Api-MVC-In-Mem-Test\obj\Debug
 c:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\Api-MVC-In-Mem-Test\obj\Debug\net9.0\Api-MVC-In-Mem.Test.pdb
 C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\Api-MVC-In-Mem-Test\obj\Debug\net9.0\Api-MVC-In-Mem.Test.genruntimeconfig.cache
 C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\Api-MVC-In-Mem-Test\obj\Debug\net9.0\ref\Api-MVC-In-Mem.Test.dll
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\Api-MVC-In-Mem-Test\obj\Debug\net9.0\Api-MVC-In-Mem.Test.sourcelink.json

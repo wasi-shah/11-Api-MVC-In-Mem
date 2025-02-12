@@ -76,3 +76,4 @@ c:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\obj\Debug\net9.0\refi
 c:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\obj\Debug\net9.0\TodoApi.pdb
 c:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\obj\Debug\net9.0\TodoApi.genruntimeconfig.cache
 c:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\obj\Debug\net9.0\ref\TodoApi.dll
+C:\Dropbox\Dropbox\Study 2025\c#\11-Api-MVC-In-Mem\TodoApi\obj\Debug\net9.0\TodoApi.sourcelink.json
