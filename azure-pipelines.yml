@@ -23,7 +23,7 @@ stages:
         projects: '**/*[Tt]odoApi*/*.csproj'
 
 - stage: Test
-  displayName: Build image
+  displayName: Test Code
   jobs:
   - job: Testing
     displayName: Test
