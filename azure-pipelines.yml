@@ -12,17 +12,40 @@ stages:
   displayName: Build image
   jobs:
   - job: Build
-    displayName: Build & Test
+    displayName: Build
     pool:
       vmImage: ubuntu-latest
     steps:
     - task: DotNetCoreCLI@2
       displayName: Test
       inputs:
+        command: 'test'
+        projects: '**/*[Tt]odoApi*/*.csproj'
+
+- stage: Test
+  displayName: Build image
+  jobs:
+  - job: Testing
+    displayName: Test
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: Test & Geneate Code Coverage
+      inputs:
         command: test
         projects: '**/*[Tt]est*/*.csproj'
         arguments: '--configuration $(BuildConfiguration) --collect:"XPlat Code Coverage"'
 
+- stage: Publish Code Coverage
+  displayName: Publish Code Coverage
+  dependsOn: Test
+  jobs:
+  - job: PublishCoverageJob
+    displayName: PublishCoverageJob
+    pool:
+      vmImage: ubuntu-latest
+    steps:
     - task: PublishCodeCoverageResults@2
       displayName: 'Publish Code Coverage'
       inputs:
@@ -30,6 +53,14 @@ stages:
         summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.cobertura.xml'
         failIfCoverageEmpty: true
 
+- stage: Docker build and Publish
+  displayName: Docker build and Publish
+  jobs:
+  - job: DockerbuildandPublishJob
+    displayName: Docker build and Publish
+    pool:
+      vmImage: ubuntu-latest
+    steps:
     - task: Docker@2
       displayName: Docker Build and Push 
       inputs:
