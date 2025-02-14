@@ -70,11 +70,11 @@ stages:
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
   
-- stage: DeploytoAKS
-  displayName: Deploy to AKS default namespace
+- stage: AKS
+  displayName: To AKS Stage
   jobs:
-  - job: toAKS
-    displayName: Taking to AKS job
+  - job: AKSjob
+    displayName: to AKS Job
     pool:
       vmImage: ubuntu-latest
     steps:
@@ -86,3 +86,4 @@ stages:
         namespace: 'default'
         manifests: '$(Pipeline.Workspace)/**/manifests/*.yaml'
         containers: 'wasishah102/api-mvc-in-mem:$(tag)'
+  
