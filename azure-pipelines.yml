@@ -70,3 +70,12 @@ stages:
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
   
+  - stage: DeploytoAKS
+  displayName: Deploy to AKS default namespace
+  jobs:
+  - job: toAKS
+    displayName: Taking to AKS job
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    
