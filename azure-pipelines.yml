@@ -84,5 +84,5 @@ stages:
         connectionType: 'kubernetesServiceConnection'
         kubernetesServiceConnection: 'devops-to-aks-default-namespace'
         namespace: 'default'
-        manifests: 'manifests/*.yaml'
+        manifests: '$(System.DefaultWorkingDirectory)/TodoApi/manifests/*.yaml'
         containers: 'wasishah102/api-mvc-in-mem:$(tag)'
