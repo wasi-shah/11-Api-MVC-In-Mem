@@ -83,11 +83,20 @@ stages:
         script: |
               echo "$(Pipeline.Workspace)"
               tree $(Pipeline.Workspace)
-    - task: KubernetesManifest@1
+    steps:
+    - task: KubernetesManifest@0
+      displayName: Deploy
+      inputs:
+        kubernetesServiceConnection: kubernetesServiceConnection
+        namespace: default
+        manifests: |
+          $(Pipeline.Workspace)/**/TodoApi/manifests/dep.yaml
+        containers: |
+          wasishah102/api-mvc-in-mem:$(tag)
       inputs:
         action: 'deploy'
         connectionType: 'kubernetesServiceConnection'
         kubernetesServiceConnection: 'devops-to-aks-default-namespace'
         namespace: 'default'
-        manifests: '$(Pipeline.Workspace)/**/manifests/*.yaml'
+        manifests: '$(Pipeline.Workspace)/**/TodoApi/manifests/dep.yaml'
         containers: 'wasishah102/api-mvc-in-mem:$(tag)'
