@@ -88,7 +88,7 @@ stages:
         script: |
           echo Write your commands here
           
-          echo cat $(Pipeline.Workspace)/s/TodoApi/manifests/dep.yaml
+          cat $(Pipeline.Workspace)/s/TodoApi/manifests/dep.yaml
     - task: KubernetesManifest@1
       displayName: Deploy
       inputs:
