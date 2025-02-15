@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dropbox\\Dropbox\\Study 2025\\c#\\11-Api-MVC-In-Mem\\todoapi\\TodoApi.csproj": {}
+    "C:\\Dropbox\\Dropbox\\Study 2025\\c#\\11-Api-MVC-In-Mem\\TodoApi\\TodoApi.csproj": {}
   },
   "projects": {
-    "C:\\Dropbox\\Dropbox\\Study 2025\\c#\\11-Api-MVC-In-Mem\\todoapi\\TodoApi.csproj": {
+    "C:\\Dropbox\\Dropbox\\Study 2025\\c#\\11-Api-MVC-In-Mem\\TodoApi\\TodoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dropbox\\Dropbox\\Study 2025\\c#\\11-Api-MVC-In-Mem\\todoapi\\TodoApi.csproj",
+        "projectUniqueName": "C:\\Dropbox\\Dropbox\\Study 2025\\c#\\11-Api-MVC-In-Mem\\TodoApi\\TodoApi.csproj",
         "projectName": "TodoApi",
-        "projectPath": "C:\\Dropbox\\Dropbox\\Study 2025\\c#\\11-Api-MVC-In-Mem\\todoapi\\TodoApi.csproj",
+        "projectPath": "C:\\Dropbox\\Dropbox\\Study 2025\\c#\\11-Api-MVC-In-Mem\\TodoApi\\TodoApi.csproj",
         "packagesPath": "C:\\Users\\Wasi\\.nuget\\packages\\",
-        "outputPath": "C:\\Dropbox\\Dropbox\\Study 2025\\c#\\11-Api-MVC-In-Mem\\todoapi\\obj\\",
+        "outputPath": "C:\\Dropbox\\Dropbox\\Study 2025\\c#\\11-Api-MVC-In-Mem\\TodoApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
