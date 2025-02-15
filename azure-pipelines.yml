@@ -69,7 +69,7 @@ stages:
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
-  
+
 - stage: AKS
   displayName: To AKS Stage
   jobs:
@@ -86,4 +86,3 @@ stages:
         namespace: 'default'
         manifests: '$(Pipeline.Workspace)/**/manifests/*.yaml'
         containers: 'wasishah102/api-mvc-in-mem:$(tag)'
-  
