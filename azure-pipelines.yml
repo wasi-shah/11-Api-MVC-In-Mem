@@ -78,6 +78,11 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+    - task: CmdLine@2
+      inputs:
+        script: |
+              echo "$(Pipeline.Workspace)"
+              tree $(Pipeline.Workspace)
     - task: KubernetesManifest@1
       inputs:
         action: 'deploy'
