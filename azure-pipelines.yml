@@ -93,10 +93,3 @@ stages:
           $(Pipeline.Workspace)/**/TodoApi/manifests/dep.yaml
         containers: |
           wasishah102/api-mvc-in-mem:$(tag)
-      inputs:
-        action: 'deploy'
-        connectionType: 'kubernetesServiceConnection'
-        kubernetesServiceConnection: 'devops-to-aks-default-namespace'
-        namespace: 'default'
-        manifests: '$(Pipeline.Workspace)/**/TodoApi/manifests/dep.yaml'
-        containers: 'wasishah102/api-mvc-in-mem:$(tag)'
