@@ -86,7 +86,7 @@ stages:
     - task: KubernetesManifest@0
       displayName: Deploy
       inputs:
-        kubernetesServiceConnection: kubernetesServiceConnection
+        kubernetesServiceConnection: devops-to-aks-default-namespace
         namespace: default
         manifests: |
           $(Pipeline.Workspace)/**/TodoApi/manifests/dep.yaml
