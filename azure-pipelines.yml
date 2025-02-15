@@ -83,7 +83,6 @@ stages:
         script: |
               echo "$(Pipeline.Workspace)"
               tree $(Pipeline.Workspace)
-    steps:
     - task: KubernetesManifest@0
       displayName: Deploy
       inputs:
