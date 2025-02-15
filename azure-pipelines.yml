@@ -90,5 +90,7 @@ stages:
         namespace: default
         manifests: |
           $(Pipeline.Workspace)/**/TodoApi/manifests/dep.yaml
+          $(Pipeline.Workspace)/**/TodoApi/manifests/services.yaml
+
         containers: |
           wasishah102/api-mvc-in-mem:$(tag)
