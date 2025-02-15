@@ -94,5 +94,7 @@ stages:
       inputs:
         kubernetesServiceConnection: devops-to-aks-default-namespace
         namespace: default
-        manifests: $(Pipeline.Workspace)/s/TodoApi/manifests/dep.yaml         
+        manifests: |
+           $(Pipeline.Workspace)/s/TodoApi/manifests/dep.yaml
+           $(Pipeline.Workspace)/s/TodoApi/manifests/services.yaml
         containers: wasishah102/api-mvc-in-mem:$(tag)
