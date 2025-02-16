@@ -1,18 +1,96 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - main
 
-pool: MyCustomAgentPool
+resources:
+- repo: self
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+variables:
+  tag: '$(Build.BuildId)'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool: MyCustomAgentPool
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: Test
+      inputs:
+        command: 'test'
+        projects: '**/*[Tt]odoApi*/*.csproj'
+
+- stage: Test
+  displayName: Test Code
+  jobs:
+  - job: Testing
+    displayName: Test
+    pool: MyCustomAgentPool
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: Test & Geneate Code Coverage
+      inputs:
+        command: test
+        projects: '**/*[Tt]est*/*.csproj'
+        arguments: '--configuration $(BuildConfiguration) --collect:"XPlat Code Coverage"'
+
+- stage: PublishCodeCoverage
+  displayName: Publish Code Coverage
+  dependsOn: Test
+  jobs:
+  - job: PublishCoverageJob
+    displayName: PublishCoverageJob
+    pool: MyCustomAgentPool
+    steps:
+    - task: PublishCodeCoverageResults@2
+      displayName: 'Publish Code Coverage'
+      inputs:
+        codeCoverageTool: Cobertura
+        summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.cobertura.xml'
+        failIfCoverageEmpty: true
+
+- stage: DockerbuildandPublish
+  displayName: Docker build and Publish
+  jobs:
+  - job: DockerbuildandPublishJob
+    displayName: Docker build and Publish
+    pool: MyCustomAgentPool
+    steps:
+    - task: Docker@2
+      displayName: Docker Build and Push 
+      inputs:
+        containerRegistry: 'azure-docker-connection'
+        repository: 'wasishah102/api-mvc-in-mem'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+        tags: '$(tag)'
+
+- stage: AKS
+  displayName: To AKS Stage
+  jobs:
+  - job: AKSjob
+    displayName: to AKS Job
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: CmdLine@2
+      inputs:
+        script: |
+              echo "$(Pipeline.Workspace)"
+              tree $(Pipeline.Workspace)
+    - task: CmdLine@2
+      inputs:
+        script: |
+          echo Write your commands here
+          
+          cat $(Pipeline.Workspace)/s/TodoApi/manifests/dep.yaml
+    - task: KubernetesManifest@1
+      displayName: Deploy
+      inputs:
+        kubernetesServiceConnection: azure-to-local-kubernetes
+        namespace: default
+        manifests: |
+           $(Pipeline.Workspace)/s/TodoApi/manifests/dep.yaml
+           $(Pipeline.Workspace)/s/TodoApi/manifests/services.yaml
+        containers: wasishah102/api-mvc-in-mem:$(tag)
