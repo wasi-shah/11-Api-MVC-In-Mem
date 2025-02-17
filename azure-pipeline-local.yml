@@ -46,6 +46,15 @@ stages:
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'    
 
+
+    - task: Kubernetes@1
+      inputs:
+        connectionType: 'Kubernetes Service Connection'
+        kubernetesServiceEndpoint: 'kube-local-cluster-3'
+        command: 'config'
+        arguments: 'set-context docker-desktop --user=docker-desktop'
+        secretType: 'dockerRegistry'
+        containerRegistryType: 'Azure Container Registry' 
     - task: Kubernetes@1
       inputs:
         connectionType: 'Kubernetes Service Connection'
