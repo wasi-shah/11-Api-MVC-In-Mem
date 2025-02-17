@@ -90,7 +90,7 @@ stages:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'kube-local-cluster-1'
         namespace: 'default'
-        command: 'kubectl cluster-info'
+        command: 'cluster-info'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
     - task: Kubernetes@1
@@ -98,7 +98,7 @@ stages:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'kube-local-cluster-1'
         namespace: 'default'
-        command: 'kubectl version'
+        command: 'version'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
     - task: KubernetesManifest@1
