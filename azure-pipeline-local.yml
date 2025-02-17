@@ -32,7 +32,8 @@ stages:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'kube-local-cluster-2'
         namespace: 'default'
-        command: 'config view'
+        command: 'config'
+        arguments: 'view'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
     - task: Kubernetes@1
