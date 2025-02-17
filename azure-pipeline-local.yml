@@ -44,7 +44,26 @@ stages:
         command: 'config'
         arguments: 'get-contexts'
         secretType: 'dockerRegistry'
-        containerRegistryType: 'Azure Container Registry'        
+        containerRegistryType: 'Azure Container Registry'    
+
+    - task: Kubernetes@1
+      inputs:
+        connectionType: 'Kubernetes Service Connection'
+        kubernetesServiceEndpoint: 'kube-local-cluster-2'
+        command: 'auth'
+        arguments: 'whoami'
+        secretType: 'dockerRegistry'
+        containerRegistryType: 'Azure Container Registry' 
+
+    - task: Kubernetes@1
+      inputs:
+        connectionType: 'Kubernetes Service Connection'
+        kubernetesServiceEndpoint: 'kube-local-cluster-2'
+        namespace: 'default'
+        command: 'config'
+        arguments: 'get-contexts'
+        secretType: 'dockerRegistry'
+        containerRegistryType: 'Azure Container Registry' 
     - task: Kubernetes@1
       inputs:
         connectionType: 'Kubernetes Service Connection'
