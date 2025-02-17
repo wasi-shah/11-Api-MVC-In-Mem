@@ -30,7 +30,7 @@ stages:
     - task: CmdLine@2
       inputs:
         script: |
-          kubectl get pods
+          kubectl config view
     - task: Kubernetes@1
       inputs:
         connectionType: 'Kubernetes Service Connection'
