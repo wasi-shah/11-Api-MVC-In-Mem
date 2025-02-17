@@ -27,6 +27,10 @@ stages:
           echo Write your commands here
           
           cat $(Pipeline.Workspace)/s/TodoApi/manifests/dep.yaml
+    - task: CmdLine@2
+      inputs:
+        script: |
+          kubectl get pods
     - task: Kubernetes@1
       inputs:
         connectionType: 'Kubernetes Service Connection'
