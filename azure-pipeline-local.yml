@@ -41,6 +41,15 @@ stages:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'kube-local-cluster-2'
         namespace: 'default'
+        command: 'config'
+        arguments: 'get-context'
+        secretType: 'dockerRegistry'
+        containerRegistryType: 'Azure Container Registry'        
+    - task: Kubernetes@1
+      inputs:
+        connectionType: 'Kubernetes Service Connection'
+        kubernetesServiceEndpoint: 'kube-local-cluster-2'
+        namespace: 'default'
         command: 'cluster-info'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
