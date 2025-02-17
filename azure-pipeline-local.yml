@@ -42,7 +42,7 @@ stages:
         kubernetesServiceEndpoint: 'kube-local-cluster-2'
         namespace: 'default'
         command: 'config'
-        arguments: 'get-context'
+        arguments: 'get-contexts'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'        
     - task: Kubernetes@1
