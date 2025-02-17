@@ -85,10 +85,26 @@ stages:
           echo Write your commands here
           
           cat $(Pipeline.Workspace)/s/TodoApi/manifests/dep.yaml
+    - task: Kubernetes@1
+      inputs:
+        connectionType: 'Kubernetes Service Connection'
+        kubernetesServiceEndpoint: 'kube-local-cluster-1'
+        namespace: 'default'
+        command: 'kubectl cluster-info'
+        secretType: 'dockerRegistry'
+        containerRegistryType: 'Azure Container Registry'
+    - task: Kubernetes@1
+      inputs:
+        connectionType: 'Kubernetes Service Connection'
+        kubernetesServiceEndpoint: 'kube-local-cluster-1'
+        namespace: 'default'
+        command: 'kubectl version'
+        secretType: 'dockerRegistry'
+        containerRegistryType: 'Azure Container Registry'
     - task: KubernetesManifest@1
       displayName: Deploy
       inputs:
-        kubernetesServiceConnection: azure-to-local-kubernetes
+        kubernetesServiceConnection: kube-local-cluster-1
         namespace: default
         manifests: |
            $(Pipeline.Workspace)/s/TodoApi/manifests/dep.yaml
