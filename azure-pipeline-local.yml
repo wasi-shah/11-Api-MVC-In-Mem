@@ -30,7 +30,7 @@ stages:
     - task: Kubernetes@1
       inputs:
         connectionType: 'Kubernetes Service Connection'
-        kubernetesServiceEndpoint: 'kube-local-cluster-1'
+        kubernetesServiceEndpoint: 'kube-local-cluster-2'
         namespace: 'default'
         command: 'cluster-info'
         secretType: 'dockerRegistry'
@@ -38,7 +38,7 @@ stages:
     - task: Kubernetes@1
       inputs:
         connectionType: 'Kubernetes Service Connection'
-        kubernetesServiceEndpoint: 'kube-local-cluster-1'
+        kubernetesServiceEndpoint: 'kube-local-cluster-2'
         namespace: 'default'
         command: 'version'
         secretType: 'dockerRegistry'
@@ -46,7 +46,7 @@ stages:
     - task: KubernetesManifest@1
       displayName: Deploy
       inputs:
-        kubernetesServiceConnection: kube-local-cluster-1
+        kubernetesServiceConnection: kube-local-cluster-2
         namespace: default
         manifests: |
            $(Pipeline.Workspace)/s/TodoApi/manifests/dep.yaml
