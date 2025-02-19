@@ -15,17 +15,16 @@ stages:
     displayName: to AKS Job
     pool: MyCustomAgentPool
     steps:
-    - task: CmdLine@2
-      inputs:
-        script: |
-              echo "$(Pipeline.Workspace)"
-              dir $(Pipeline.Workspace)
-    - task: CmdLine@2
-      inputs:
-        script: |
-          echo Write your commands here
-          
-          cat $(Pipeline.Workspace)/s/TodoApi/manifests/dep.yaml
+ #   - task: CmdLine@2
+ #     inputs:
+ #       script: |
+ #             echo "$(Pipeline.Workspace)"
+ #             tree $(Pipeline.Workspace)
+ #   - task: CmdLine@2
+ #     inputs:
+#        script: |
+#          echo Write your commands here          
+#          cat $(Pipeline.Workspace)/s/TodoApi/manifests/dep.yaml
     - task: CmdLine@2
       inputs:
         script: |
