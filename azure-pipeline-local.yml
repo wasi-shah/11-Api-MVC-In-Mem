@@ -13,8 +13,7 @@ stages:
   jobs:
   - job: AKSjob
     displayName: to AKS Job
-    pool:
-      vmImage: ubuntu-latest
+    pool: MyCustomAgentPool
     steps:
     - task: CmdLine@2
       inputs:
