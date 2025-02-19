@@ -99,6 +99,14 @@ stages:
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
     - task: KubernetesManifest@1
+      displayName: 'Install Ingress'
+      inputs:
+        kubernetesServiceConnection: kube-local-cluster-3
+        namespace: default
+        manifests: |
+            https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.41.2/deploy/static/provider/cloud/deploy.yaml
+        containers: wasishah102/api-mvc-in-mem
+    - task: KubernetesManifest@1
       displayName: 'Deploy manifests yaml'
       inputs:
         kubernetesServiceConnection: kube-local-cluster-3
