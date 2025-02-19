@@ -105,7 +105,7 @@ stages:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'devops-to-aks-default-namespace'
         command: 'apply'
-        arguments: 'https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.41.2/deploy/static/provider/cloud/deploy.yaml'
+        arguments: '-f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.41.2/deploy/static/provider/cloud/deploy.yaml'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
 
