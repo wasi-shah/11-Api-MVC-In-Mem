@@ -19,7 +19,7 @@ stages:
       inputs:
         script: |
               echo "$(Pipeline.Workspace)"
-              tree $(Pipeline.Workspace)
+              dir $(Pipeline.Workspace)
     - task: CmdLine@2
       inputs:
         script: |
