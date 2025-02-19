@@ -98,14 +98,17 @@ stages:
         command: 'version'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
-    - task: KubernetesManifest@1
-      displayName: 'Install Ingress'
+
+    - task: Kubernetes@1
+      displayName: "Install ingress"
       inputs:
-        kubernetesServiceConnection: kube-local-cluster-3
-        namespace: default
-        manifests: |
-            https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.41.2/deploy/static/provider/cloud/deploy.yaml
-        containers: wasishah102/api-mvc-in-mem
+        connectionType: 'Kubernetes Service Connection'
+        kubernetesServiceEndpoint: 'devops-to-aks-default-namespace'
+        command: 'apply'
+        arguments: 'https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.41.2/deploy/static/provider/cloud/deploy.yaml'
+        secretType: 'dockerRegistry'
+        containerRegistryType: 'Azure Container Registry'
+
     - task: KubernetesManifest@1
       displayName: 'Deploy manifests yaml'
       inputs:
@@ -115,3 +118,4 @@ stages:
            $(Pipeline.Workspace)/s/TodoApi/manifests/dep.yaml
            $(Pipeline.Workspace)/s/TodoApi/manifests/services.yaml
         containers: wasishah102/api-mvc-in-mem
+    
