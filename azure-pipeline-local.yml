@@ -103,7 +103,7 @@ stages:
     - task: AzureCLI@2
       displayName: 'Add ingress service'
       inputs:
-        scriptType: 'ps'
+        scriptType: 'bash'
         scriptLocation: 'inlineScript'
         inlineScript: 'kubectl apply - https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.41.2/deploy/static/provider/cloud/deploy.yaml'
 
