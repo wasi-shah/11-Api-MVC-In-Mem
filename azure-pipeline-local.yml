@@ -30,6 +30,7 @@ stages:
         script: |
           kubectl config view
     - task: Kubernetes@1
+      displayName: 'default config view'
       inputs:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'kube-local-cluster-3'
@@ -39,6 +40,7 @@ stages:
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
     - task: Kubernetes@1
+      displayName: 'config get-context'
       inputs:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'kube-local-cluster-3'
@@ -50,6 +52,7 @@ stages:
 
 
     - task: Kubernetes@1
+      displayName: 'set-context docker-desktop --user=docker-desktop'
       inputs:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'kube-local-cluster-3'
@@ -58,6 +61,7 @@ stages:
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry' 
     - task: Kubernetes@1
+      displayName: 'auth whoami'
       inputs:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'kube-local-cluster-3'
@@ -67,6 +71,7 @@ stages:
         containerRegistryType: 'Azure Container Registry' 
 
     - task: Kubernetes@1
+      displayName: 'config get-contest - again'
       inputs:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'kube-local-cluster-3'
@@ -76,6 +81,7 @@ stages:
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry' 
     - task: Kubernetes@1
+      displayName: 'cluster-info'
       inputs:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'kube-local-cluster-3'
@@ -84,6 +90,7 @@ stages:
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
     - task: Kubernetes@1
+      displayName: 'version'
       inputs:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'kube-local-cluster-3'
@@ -92,7 +99,7 @@ stages:
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
     - task: KubernetesManifest@1
-      displayName: Deploy
+      displayName: 'Deploy manifests yaml'
       inputs:
         kubernetesServiceConnection: kube-local-cluster-3
         namespace: default
