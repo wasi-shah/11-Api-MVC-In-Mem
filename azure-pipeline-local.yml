@@ -100,13 +100,6 @@ stages:
         containerRegistryType: 'Azure Container Registry'
 
 
-    - task: AzureCLI@2
-      displayName: 'Add ingress service'
-      inputs:
-        scriptType: 'bash'
-        scriptLocation: 'inlineScript'
-        inlineScript: 'kubectl apply - https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.41.2/deploy/static/provider/cloud/deploy.yaml'
-
     - task: KubernetesManifest@1
       displayName: 'Deploy manifests yaml'
       inputs:
