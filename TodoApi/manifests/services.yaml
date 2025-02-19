@@ -7,6 +7,6 @@ spec:
     app: dep-api-mvc-in-mem
   ports:
   - protocol: TCP
-    port: 80
+    port: 8010
     targetPort: 8080
   type: LoadBalancer
