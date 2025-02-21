@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Api-MVC-In-Mem.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2142fb86a483c49d9723565ba05795d1623843a6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5436a6233ac0595942774406e8c332597640ee9a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Api-MVC-In-Mem.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Api-MVC-In-Mem.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

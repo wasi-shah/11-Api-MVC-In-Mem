@@ -2,7 +2,7 @@
 //@TodoApi_HostAddress = http://localhost:55998
 
 
-@TodoApi_HostAddress = http://172.165.145.181
+@TodoApi_HostAddress = http://kubernetes.docker.internal:8010
 
 
 ###
